@@ -11,15 +11,14 @@
 
   flake.wrappersModules.niri =
     {
-      config,
       lib,
       pkgs,
       ...
     }:
     {
-      config.settings =
+      settings =
         let
-          noctaliaExe = lib.getExe self.packages.${config.pkgs.stdenv.hostPlatform.system}.noctalia-shell;
+          noctaliaExe = lib.getExe self.packages.${pkgs.stdenv.hostPlatform.system}.noctalia-shell;
           vicinaeExe = lib.getExe pkgs.vicinae;
         in
         {
@@ -109,8 +108,6 @@
 
             "Mod+T".spawn = lib.getExe pkgs.kitty;
             "Mod+Space".spawn-sh = "${lib.getExe pkgs.vicinae} toggle";
-
-            "Super+Alt+S".spawn-sh = "pkill orca || exec orca";
 
             "XF86AudioRaiseVolume".spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0";
             "XF86AudioLowerVolume".spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-";
