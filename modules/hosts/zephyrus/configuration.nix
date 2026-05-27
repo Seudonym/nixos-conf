@@ -5,6 +5,8 @@
     {
       imports = [
         self.nixosModules.zephyrusHardware
+        self.nixosModules.desktop
+        self.nixosModules.userWahid
       ];
 
       boot.loader.systemd-boot.enable = true;
