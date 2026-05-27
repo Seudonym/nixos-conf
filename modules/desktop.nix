@@ -4,13 +4,8 @@
     { inputs, pkgs, ... }:
 
     {
-      imports = [
-        inputs.niri.nixosModules.niri
-      ];
-
       nixpkgs.overlays = [
-        inputs.niri.overlays.niri
-        (_: prev: {
+        (final: prev: {
           openldap = prev.openldap.overrideAttrs {
             doCheck = !prev.stdenv.hostPlatform.isi686;
           };

@@ -66,7 +66,7 @@
           ];
         };
 
-        displayManager.gdm.enable = true;
+        displayManager.gdm.enable = false;
         gvfs.enable = true;
         udisks2.enable = true;
         printing.enable = true;
