@@ -58,21 +58,20 @@
           tree-sitter
           typescript-language-server
           lua-language-server
+          stylua
           clang-tools
           biome
           nil
           nixfmt
           gcc
 
-          # android
-          androidenv.androidPkgs.platform-tools
-          scrcpy
-
-          # linux
-
           codex
           gemini-cli
           opencode
+
+          # android
+          androidenv.androidPkgs.platform-tools
+          scrcpy
 
           # daily driving
           onlyoffice-desktopeditors
@@ -93,6 +92,8 @@
           ckan
           prismlauncher
           lutris
+
+          # emacs
         ];
       };
 

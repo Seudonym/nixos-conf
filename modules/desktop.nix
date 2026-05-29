@@ -1,4 +1,4 @@
-{ self, inputs, ... }:
+{ ... }:
 {
   flake.nixosModules.desktop =
     { inputs, pkgs, ... }:
@@ -16,11 +16,6 @@
         enable = true;
       };
 
-      services.xserver.xkb = {
-        layout = "us";
-        variant = "";
-      };
-
       services.xserver.videoDrivers = [
         "amdgpu"
         "nvidia"
@@ -33,6 +28,7 @@
           noto-fonts-color-emoji
           liberation_ttf
           nerd-fonts.victor-mono
+          nerd-fonts.iosevka-term
           roboto
           corefonts
           vista-fonts
@@ -51,8 +47,8 @@
         };
       };
 
-      environment.systemPackages = [
-        inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+      environment.systemPackages = with pkgs; [
+        noctalia-shell
       ];
     };
 }
