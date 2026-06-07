@@ -3,13 +3,7 @@
     inputs,
     pkgs,
     ...
-  }: let
-    spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
-  in {
-    imports = [
-      inputs.spicetify-nix.nixosModules.default
-    ];
-
+  }: {
     users.users.wahid = {
       isNormalUser = true;
       description = "Wahid Khan";
@@ -30,18 +24,16 @@
 
         # utils
         chezmoi
-        zoxide
-        yazi
         eza
         dua
         duf
         fd
         ripgrep
-        stow
-        starship
         unzip
         sshfs
         vulkan-tools
+        tldr
+        carapace
 
         # media
         jamesdsp
@@ -58,12 +50,11 @@
         biome
         nixd
         alejandra
-
         gcc
 
+        # ai
         codex
         gemini-cli
-        opencode
 
         # android
         androidenv.androidPkgs.platform-tools
@@ -74,10 +65,11 @@
         inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
         qbittorrent
         gthumb
+        mpv
         nautilus
         discord
         aseprite
-        lmstudio
+        readest
 
         # theming
         morewaita-icon-theme
@@ -88,36 +80,8 @@
         ckan
         prismlauncher
         lutris
-
-        # emacs
+        steam
       ];
-    };
-
-    environment.localBinInPath = true;
-
-    programs.fish.enable = true;
-    programs.direnv.enable = true;
-
-    programs.spicetify = {
-      enable = true;
-      theme = spicePkgs.themes.comfy;
-      enabledCustomApps = with spicePkgs.apps; [
-        lyricsPlus
-      ];
-      enabledExtensions = with spicePkgs.extensions; [
-        catJamSynced
-        powerBar
-        hidePodcasts
-        fullAppDisplay
-      ];
-      colorScheme = "Comfy";
-    };
-
-    xdg.mime = {
-      enable = true;
-      defaultApplications = {
-        "inode/directory" = "org.gnome.Nautilus.desktop";
-      };
     };
   };
 }
