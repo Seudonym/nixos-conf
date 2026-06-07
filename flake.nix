@@ -15,7 +15,7 @@
     };
   };
 
-  outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
   nixConfig = {
     extra-trusted-substituters = [
       "https://noctalia.cachix.org"
