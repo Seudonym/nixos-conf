@@ -16,6 +16,7 @@
         self.nixosModules.dev
 
         self.nixosModules.tailscale
+        self.nixosModules.wayvnc
         self.nixosModules.syncthing
 
         self.nixosModules.userWahid

@@ -58,6 +58,7 @@
           # ai
           codex
           gemini-cli
+          opencode
 
           # android
           androidenv.androidPkgs.platform-tools
