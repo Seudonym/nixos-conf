@@ -23,6 +23,7 @@
 
       environment.systemPackages = with pkgs; [
         neovim
+        helix
         wget
         xdg-desktop-portal-gtk
         xdg-desktop-portal-gnome
@@ -34,7 +35,7 @@
 
         wireguard-tools
         proton-vpn
-        inputs.flox.packages.${pkgs.stdenv.hostPlatform.system}.default
+        # inputs.flox.packages.${pkgs.stdenv.hostPlatform.system}.default
         noctalia-shell
       ];
 

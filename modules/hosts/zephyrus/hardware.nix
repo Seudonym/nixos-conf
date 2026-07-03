@@ -21,7 +21,10 @@
         "sdhci_pci"
       ];
       boot.initrd.kernelModules = [ ];
-      boot.kernelModules = [ "kvm-amd" ];
+      boot.kernelModules = [
+        "kvm-amd"
+        "i2c-dev"
+      ];
       boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
       boot.kernelParams = [
         "nvidia.NVreg_TemporaryFilePath=/var/tmp"

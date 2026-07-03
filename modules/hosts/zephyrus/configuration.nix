@@ -1,7 +1,7 @@
 { self, ... }:
 {
   flake.nixosModules.zephyrusConfiguration =
-    { ... }:
+    { inputs, ... }:
     {
       imports = [
         self.nixosModules.zephyrusHardware
@@ -20,6 +20,9 @@
         self.nixosModules.syncthing
 
         self.nixosModules.userWahid
+
+        self.nixosModules.sops
+        self.nixosModules.stt
       ];
 
       boot.loader.systemd-boot.enable = true;

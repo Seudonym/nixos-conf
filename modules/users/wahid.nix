@@ -14,14 +14,18 @@
           "networkmanager"
           "wheel"
           "docker"
+          "i2c"
+          "ydotool"
         ];
         shell = pkgs.fish;
 
         packages = with pkgs; [
           # desktop
           kitty
+          wezterm
           vicinae
           brightnessctl
+          ddcutil
           gpu-screen-recorder
           kdePackages.kdeconnect-kde
 
@@ -45,10 +49,12 @@
           # dev
           gh
           git
+          jj
           tree-sitter
           typescript-language-server
           lua-language-server
           stylua
+          tombi
           clang-tools
           biome
           nixd
@@ -57,8 +63,8 @@
 
           # ai
           codex
-          gemini-cli
           opencode
+          antigravity-cli
 
           # android
           androidenv.androidPkgs.platform-tools
@@ -72,7 +78,6 @@
           mpv
           nautilus
           discord
-          aseprite
           readest
 
           # theming
@@ -81,7 +86,6 @@
           adw-gtk3
 
           # games
-          ckan
           prismlauncher
           lutris
           steam

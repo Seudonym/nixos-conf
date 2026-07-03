@@ -13,5 +13,6 @@
         enableFishIntegration = true;
       };
       programs.direnv.enable = true;
+      programs.ydotool.enable = true;
     };
 }

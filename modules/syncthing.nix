@@ -4,7 +4,7 @@
     { ... }:
     {
       services.syncthing = {
-        enable = true;
+        enable = false;
         user = "wahid";
         dataDir = "/home/wahid/syncthing/";
         openDefaultPorts = true;
